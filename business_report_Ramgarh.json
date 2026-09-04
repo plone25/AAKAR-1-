@@ -1,0 +1,110 @@
+{
+  "user_input": {
+    "geographic_location": "Ramgarh",
+    "available_margin_capital": 100000.0,
+    "proposed_business_category": "Handicrafts"
+  },
+  "feasibility_report": {
+    "market_reach": {
+      "target_population_5_10km": 29515,
+      "estimated_monthly_market_size_inr": 150525319,
+      "market_penetration_potential": 0.1,
+      "reach_score": 66.6
+    },
+    "opportunity_analysis": [
+      "Custom artwork for local festivals and weddings",
+      "Training center for traditional craft techniques",
+      "Online marketplace connecting artisans with urban buyers",
+      "Craft kits for tourists and cultural enthusiasts",
+      "Scalable operations with potential for regional expansion"
+    ],
+    "swot_analysis": {
+      "Strengths": [
+        "Initial investment of Rs1,000,000 allows for proper setup",
+        "Government support available through various schemes"
+      ],
+      "Weaknesses": [
+        "Limited financial buffer for unexpected expenses",
+        "Dependence on local economic conditions"
+      ],
+      "Opportunities": [
+        "Attractive profit margins allow for reinvestment and growth",
+        "Relatively simple supply chain reduces operational complexity",
+        "Government subsidies and support for micro-enterprises",
+        "Potential to diversify into related products/services"
+      ],
+      "Threats": [
+        "High seasonality requires careful inventory and cash flow management",
+        "Competition from established players in the region",
+        "Economic downturns could reduce disposable income",
+        "Changes in government policies or subsidy programs"
+      ]
+    },
+    "threats_identification": [
+      "Seasonal demand fluctuations affecting revenue stability",
+      "Dependency on single buyers or major customers",
+      "Changing consumer preferences and buying habits",
+      "Supply chain bottlenecks during peak seasons or adverse weather",
+      "Transportation and logistics challenges in remote areas"
+    ],
+    "competitor_mapping": {
+      "Direct competitors": 1,
+      "Indirect competitors": 1,
+      " Potential substitutes": 1,
+      "New entrants (last year)": 1
+    },
+    "product_market_value": {
+      "Small handicraft item": 173.85,
+      "Medium artwork": 575.19,
+      "Large decorative piece": 1249.39
+    }
+  },
+  "financial_plan": {
+    "project_cost": 1000000.0,
+    "loan_amount": 900000.0,
+    "margin_money": 100000.0,
+    "loan_scheme": {
+      "name": "Term Loan Scheme",
+      "interest_rate": 8.0,
+      "tenure_years": 7,
+      "moratorium_months": 6
+    },
+    "emi_schedule": [
+      {
+        "quarter": 1,
+        "opening_balance": 936605.36,
+        "emi_payment": 46624.16,
+        "interest": 18857.27,
+        "principal": 27766.9,
+        "closing_balance": 908838.46
+      },
+      {
+        "quarter": 2,
+        "opening_balance": 908838.46,
+        "emi_payment": 46624.16,
+        "interest": 18298.22,
+        "principal": 28325.95,
+        "closing_balance": 880512.51
+      },
+      {
+        "quarter": 3,
+        "opening_balance": 880512.51,
+        "emi_payment": 46624.16,
+        "interest": 17727.91,
+        "principal": 28896.25,
+        "closing_balance": 851616.26
+      },
+      {
+        "quarter": 4,
+        "opening_balance": 851616.26,
+        "emi_payment": 46624.16,
+        "interest": 17146.13,
+        "principal": 29478.04,
+        "closing_balance": 822138.22
+      }
+    ],
+    "moratorium_period": 6,
+    "total_interest": 275622.93,
+    "total_repayment": 1175622.93
+  }
+}
