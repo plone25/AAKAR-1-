@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy: #1F4E79;
+  --navy-dark: #163857;
+  --navy-light: #2A6496;
+  --saffron: #F28C28;
+  --saffron-hover: #D97706;
+  --green: #2E8B3E;
+  --green-light: #EBF7EE;
+  --background: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --border-color: #E2E8F0;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tricolor Stripe under Header */
+.tricolor-stripe {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #F28C28 0%,
+    #F28C28 33.3%,
+    #CBD5E1 33.3%,
+    #CBD5E1 66.6%,
+    #2E8B3E 66.6%,
+    #2E8B3E 100%
+  );
+}
+
+/* Single clean card style: white, clean border, generous padding, subtle elevation */
+.sih-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+}
+
+.sih-card-interactive {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+  transition: all 0.15s ease-in-out;
+}
+
+.sih-card-interactive:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+}
+
+/* High contrast primary buttons */
+.btn-saffron {
+  background-color: #F28C28;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+}
+
+.btn-saffron:hover {
+  background-color: #D97706;
+}
+
+.btn-navy {
+  background-color: #1F4E79;
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+}
+
+.btn-navy:hover {
+  background-color: #163857;
+}
+
+/* Print Stylesheet for PDF Export */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .sih-card {
+    border: 1px solid #CBD5E1 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 1rem !important;
+  }
+
+  .tab-content-print {
+    display: block !important;
+  }
+}

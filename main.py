@@ -59,7 +59,7 @@ class BusinessAdvisoryAssistant:
         return self.feasibility_analyzer.analyze(
             location=user_input.geographic_location,
             business_category=user_input.proposed_business_category,
-            budget=user_input.available_margin_capital * 10  # Total project cost estimate
+            budget=user_input.available_margin_capital  # Available margin capital
         )
 
     def run_financial_calculation(self, user_input: UserInput) -> FinancialPlan:
@@ -127,7 +127,8 @@ class BusinessAdvisoryAssistant:
                 "swot_analysis": feasibility_report["swot_analysis"],
                 "threats_identification": feasibility_report["threats_identification"],
                 "competitor_mapping": feasibility_report["competitor_mapping"],
-                "product_market_value": feasibility_report["product_market_value"]
+                "product_market_value": feasibility_report["product_market_value"],
+                "risk_simulation": feasibility_report.get("risk_simulation", {})
             },
             "financial_plan": {
                 "project_cost": financial_plan.project_cost,
@@ -167,6 +168,12 @@ def main():
             available_margin_capital = float(margin_input)
             if available_margin_capital <= 0:
                 print("Please enter a positive amount.")
+                continue
+            # Check if margin capital would create a project cost exceeding maximum allowed
+            MAX_MARGIN_CAPITAL = 500000  # ₹5 lakhs (10% of ₹50 lakhs max project cost)
+            if available_margin_capital > MAX_MARGIN_CAPITAL:
+                print(f"⚠️ Margin capital cannot exceed ₹{MAX_MARGIN_CAPITAL:,} "
+                      f"(would create project cost > ₹{MAX_MARGIN_CAPITAL*10:,})")
                 continue
             break
         except ValueError:
@@ -257,6 +264,18 @@ def display_feasibility_report(report: Dict):
     for i, threat in enumerate(report["threats_identification"], 1):
         print(f"  {i}. {threat}")
 
+    print("\n[RISK SIMULATION]")
+    risk_sim = report.get("risk_simulation", {})
+    if risk_sim:
+        for case, values in risk_sim.items():
+            print(f"  {case.replace('_', ' ').title()}:")
+            print(f"    Monthly Income: Rs{values.get('monthly_income', 0):,.2f}")
+            print(f"    Monthly Expenses: Rs{values.get('monthly_expenses', 0):,.2f}")
+            print(f"    Net Profit: Rs{values.get('net_profit', 0):,.2f}")
+            print(f"    Survival Months: {values.get('survival_months', 0)}")
+    else:
+        print("  Risk simulation data not available.")
+
     print("\n[COMPETITOR MAPPING]")
     for competitor_type, count in report["competitor_mapping"].items():
         print(f"  - {competitor_type}: {count} businesses")
@@ -304,18 +323,25 @@ def display_financial_plan(plan: Dict, show_plots: bool = False):
             fig1 = calculator.plot_scheme_comparison(plan['project_cost'])
             if fig1:
                 fig1.suptitle('Loan Scheme Eligibility Analysis', fontsize=14, fontweight='bold')
+                fig1.tight_layout()
+                fig1.subplots_adjust(top=0.85)
                 plt.show()
 
             # Show amortization chart
             fig2 = calculator.plot_loan_amortization(plan['emi_schedule'])
             if fig2:
                 fig2.suptitle('Loan Amortization Schedule', fontsize=14, fontweight='bold')
+                fig2.tight_layout()
+                fig2.subplots_adjust(top=0.85)
+                plt.show()
                 plt.show()
 
             # Show EMI breakdown
             fig3 = calculator.plot_emi_breakdown(plan['emi_schedule'])
             if fig3:
                 fig3.suptitle('EMI Payment Breakdown: Interest vs Principal', fontsize=14, fontweight='bold')
+                fig3.tight_layout()
+                fig3.subplots_adjust(top=0.85)
                 plt.show()
 
             # Show moratorium impact
@@ -328,6 +354,8 @@ def display_financial_plan(plan: Dict, show_plots: bool = False):
             )
             if fig4:
                 fig4.suptitle('Impact of Moratorium Period on Repayment', fontsize=14, fontweight='bold')
+                fig4.tight_layout()
+                fig4.subplots_adjust(top=0.85)
                 plt.show()
 
         except ImportError:

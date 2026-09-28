@@ -271,7 +271,7 @@ class FinancialCalculator:
 
             ax.set_xlabel('Quarter')
             ax.set_ylabel('Amount (₹)')
-            ax.set_title('Loan Amortization: Opening vs Closing Balance')
+            ax.set_title('Loan Amortization: Opening vs Closing Balance', pad=30)
             ax.legend()
             ax.grid(True, alpha=0.3)
             ax.ticklabel_format(style='plain', axis='y')
@@ -308,7 +308,7 @@ class FinancialCalculator:
 
             ax.set_xlabel('Quarter')
             ax.set_ylabel('Amount (₹)')
-            ax.set_title('EMI Breakdown: Interest vs Principal Payment')
+            ax.set_title('EMI Breakdown: Interest vs Principal Payment', pad=30)
             ax.legend()
             ax.grid(True, alpha=0.3, axis='y')
             ax.ticklabel_format(style='plain', axis='y')
@@ -348,7 +348,7 @@ class FinancialCalculator:
 
             bars1 = ax1.bar(schemes, [1 if e else 0 for e in eligible], color=colors, alpha=0.7)
             ax1.set_ylabel('Eligible (1=Yes, 0=No)')
-            ax1.set_title('Loan Scheme Eligibility')
+            ax1.set_title('Loan Scheme Eligibility', pad=30)
             ax1.set_ylim(0, 1.5)
 
             # Add text labels
@@ -376,7 +376,7 @@ class FinancialCalculator:
 
             ax2.set_xlabel('Limit Type')
             ax2.set_ylabel('Amount (₹)')
-            ax2.set_title('Loan Scheme Limits vs Project Cost')
+            ax2.set_title('Loan Scheme Limits vs Project Cost', pad=30)
             ax2.set_xticks(x)
             ax2.set_xticklabels(limits)
             ax2.legend()
@@ -446,7 +446,7 @@ class FinancialCalculator:
             bars1 = ax1.bar(scenarios, [r/100000 for r in total_repayments],
                            color=colors, alpha=0.8, edgecolor='black')
             ax1.set_ylabel('Total Repayment (₹ in lakhs)')
-            ax1.set_title('Total Repayment: Impact of Moratorium')
+            ax1.set_title('Total Repayment: Impact of Moratorium', pad=30)
             ax1.bar_label(bars1, fmt='₹%.1f L')
 
             # Plot 2: Interest component comparison
@@ -455,7 +455,7 @@ class FinancialCalculator:
             bars2 = ax2.bar(scenarios, [i/100000 for i in total_interests],
                            color=colors, alpha=0.8, edgecolor='black')
             ax2.set_ylabel('Total Interest (₹ in lakhs)')
-            ax2.set_title('Total Interest: Impact of Moratorium')
+            ax2.set_title('Total Interest: Impact of Moratorium', pad=30)
             ax2.bar_label(bars2, fmt='₹%.1f L')
 
             plt.tight_layout()

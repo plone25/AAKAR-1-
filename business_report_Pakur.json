@@ -1,0 +1,139 @@
+{
+  "user_input": {
+    "geographic_location": "Pakur",
+    "available_margin_capital": 100000.0,
+    "proposed_business_category": "Food Processing"
+  },
+  "feasibility_report": {
+    "market_reach": {
+      "target_population_5_10km": 45391,
+      "estimated_monthly_market_size_inr": 209023453,
+      "market_penetration_potential": 0.05,
+      "reach_score": 62.3
+    },
+    "opportunity_analysis": [
+      "Local snack processing using indigenous ingredients",
+      "Fruit pulping and packaging for seasonal produce",
+      "Spice grinding and blending units",
+      "Ready-to-eat meal packets for migrant workers",
+      "Adult education and literacy improvement programs (PMKVY centers)"
+    ],
+    "swot_analysis": {
+      "Strengths": [
+        "Developing road and digital connectivity improving market access",
+        "Rising disposable income in emerging urban centers",
+        "Initial investment of Rs100,000 allows for proper setup",
+        "Government support through Jharkhand State Livelihood Promotion Society",
+        "Availability of local raw materials (minerals, forest produce, agricultural)"
+      ],
+      "Weaknesses": [
+        "Lower literacy rates in rural areas may require additional training investment",
+        "Limited financial buffer for unexpected expenses",
+        "Dependence on monsoon-dependent agriculture affects rural demand"
+      ],
+      "Opportunities": [
+        "Strong market growth potential in this sector",
+        "Government subsidies via Jharkhand Mukhyamantri Shramik Yojana",
+        "Potential to diversify into related products/services",
+        "Leveraging Jharkhand's tribal handicrafts and organic farming trends",
+        "Growing e-commerce penetration enabling wider market reach",
+        "NLP-enhanced analysis could identify more specific local opportunities"
+      ],
+      "Threats": [
+        "Competition from established players in regional hubs (Ranchi, Jamshedpur)",
+        "Economic slowdowns could reduce disposable income",
+        "Changes in central/state government policies or subsidy programs",
+        "Naxal-affected areas may face security and logistics challenges",
+        "Water scarcity in summer months affecting agriculture and livestock",
+        "NLP-enhanced monitoring could help detect emerging local risks early"
+      ]
+    },
+    "threats_identification": [
+      "Seasonal demand fluctuations affecting revenue stability",
+      "Water scarcity in summer months affecting agriculture and livestock",
+      "Deforestation and soil erosion impacting agricultural productivity",
+      "Dependence on mining and agriculture makes economy vulnerable to commodity price swings",
+      "Dependency on single buyers or major customers",
+      "Changing consumer preferences and buying habits"
+    ],
+    "competitor_mapping": {
+      "Direct competitors": 1,
+      "Indirect competitors": 1,
+      " Potential substitutes": 1,
+      "New entrants (last year)": 1
+    },
+    "product_market_value": {
+      "Snack packet (100g)": 14.49,
+      "Spice pack (50g)": 27.4,
+      "Ready meal": 41.52
+    },
+    "risk_simulation": {
+      "best_case": {
+        "monthly_income": 12541.41,
+        "monthly_expenses": 45000.0,
+        "net_profit": -32458.59,
+        "survival_months": 3
+      },
+      "expected_case": {
+        "monthly_income": 10451.17,
+        "monthly_expenses": 50000.0,
+        "net_profit": -39548.83,
+        "survival_months": 2
+      },
+      "worst_case": {
+        "monthly_income": 7315.82,
+        "monthly_expenses": 60000.0,
+        "net_profit": -52684.18,
+        "survival_months": 1
+      }
+    }
+  },
+  "financial_plan": {
+    "project_cost": 1000000.0,
+    "loan_amount": 900000.0,
+    "margin_money": 100000.0,
+    "loan_scheme": {
+      "name": "Term Loan Scheme",
+      "interest_rate": 8.0,
+      "tenure_years": 7,
+      "moratorium_months": 6
+    },
+    "emi_schedule": [
+      {
+        "quarter": 1,
+        "opening_balance": 936605.36,
+        "emi_payment": 46624.16,
+        "interest": 18857.27,
+        "principal": 27766.9,
+        "closing_balance": 908838.46
+      },
+      {
+        "quarter": 2,
+        "opening_balance": 908838.46,
+        "emi_payment": 46624.16,
+        "interest": 18298.22,
+        "principal": 28325.95,
+        "closing_balance": 880512.51
+      },
+      {
+        "quarter": 3,
+        "opening_balance": 880512.51,
+        "emi_payment": 46624.16,
+        "interest": 17727.91,
+        "principal": 28896.25,
+        "closing_balance": 851616.26
+      },
+      {
+        "quarter": 4,
+        "opening_balance": 851616.26,
+        "emi_payment": 46624.16,
+        "interest": 17146.13,
+        "principal": 29478.04,
+        "closing_balance": 822138.22
+      }
+    ],
+    "moratorium_period": 6,
+    "total_interest": 275622.93,
+    "total_repayment": 1175622.93
+  }
+}

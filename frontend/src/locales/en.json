@@ -1,0 +1,154 @@
+{
+  "brand": {
+    "name": "AAKAR",
+    "tagline": "AI-powered Advisory & Knowledge for Aspirational Rural-enterprises",
+    "hackathon": "Smart India Hackathon 2026",
+    "ps_id": "PS SIH26091",
+    "team": "Team CryptuS",
+    "theme": "Agriculture, Food Tech & Rural Development"
+  },
+  "nav": {
+    "home": "Home",
+    "analysis": "Start Analysis",
+    "report": "Report",
+    "language": "Language"
+  },
+  "hero": {
+    "badge": "Smart India Hackathon 2026 • PS SIH26091",
+    "title": "Hyper-Local Business Advisory & Smart Financial Structuring",
+    "subtitle": "Empowering rural micro-entrepreneurs in Jharkhand with data-driven market feasibility, competitor intelligence, and automated government loan structuring.",
+    "cta": "Start Feasibility Analysis",
+    "features_title": "The 6 Problems We Solve for Rural Micro-Entrepreneurs",
+    "features_subtitle": "Grassroots entrepreneurs often face uninformed decisions and complex financing. AAKAR bridges the gap.",
+    "problems": {
+      "right_business": {
+        "title": "Right Business Selection",
+        "desc": "Identify viable categories matched to local resources, purchasing power, and regional strengths."
+      },
+      "local_demand": {
+        "title": "Local Demand & Reach",
+        "desc": "Precise consumer base and monthly market size estimation within 5–10 km village radius."
+      },
+      "competition": {
+        "title": "Competitor Landscape",
+        "desc": "Map direct competitors, indirect substitutes, and newly emerging local enterprises."
+      },
+      "pricing": {
+        "title": "Optimal Product Pricing",
+        "desc": "Benchmark fair selling prices calibrated to rural household income and affordability."
+      },
+      "loan_planning": {
+        "title": "Smart Loan Planning",
+        "desc": "Calculate project costs (margin ÷ 10%), 90% loan eligibility, and quarterly EMI schedules."
+      },
+      "scheme_selection": {
+        "title": "Automated Scheme Selection",
+        "desc": "Route automatically to Micro Finance (≤ ₹1.40L) or Term Loan (≤ ₹50L) schemes with moratorium."
+      }
+    }
+  },
+  "form": {
+    "title": "Enter Your Enterprise Proposal",
+    "subtitle": "Provide 3 simple details to generate an instant hyper-local feasibility analysis and financial repayment plan.",
+    "location_label": "Geographic Location (Jharkhand)",
+    "location_placeholder": "Select district or type block/village...",
+    "location_custom_placeholder": "Or enter custom village/block...",
+    "location_hint": "Select from 24 Jharkhand districts or specify your village/block.",
+    "margin_label": "Available Margin Capital (₹)",
+    "margin_hint": "Enter your own capital between ₹1 and ₹5,00,000 (10% equity).",
+    "computed_project_cost": "Computed Total Project Cost",
+    "computed_loan_amount": "Eligible Loan Amount (90%)",
+    "category_label": "Proposed Business Category",
+    "category_hint": "Select one of the 8 enterprise sectors supported in rural clusters.",
+    "submit_btn": "Generate Comprehensive Advisory Report",
+    "analyzing": "Analyzing local demand and structuring finance...",
+    "validation_margin_min": "Margin capital must be at least ₹1",
+    "validation_margin_max": "Margin capital cannot exceed ₹5,00,000 (max project cost ₹50,00,000)",
+    "validation_location": "Please select or enter a geographic location",
+    "validation_category": "Please select a business category"
+  },
+  "categories": {
+    "Dairy": "Dairy & Milk Production",
+    "Retail": "Village Retail & Kirana",
+    "Textiles": "Handloom & Textiles",
+    "Agriculture": "Agriculture & Allied",
+    "Food Processing": "Food & Agro Processing",
+    "Handicrafts": "Tribal Handicrafts & Artisan",
+    "Services": "Rural Technical Services",
+    "OTHER": "Other Small Enterprise",
+    "Other": "Other Small Enterprise"
+  },
+  "dashboard": {
+    "title": "Comprehensive Business & Financial Advisory",
+    "subtitle": "Personalized strategy for",
+    "tab_local": "Local Business Intelligence",
+    "tab_financial": "Financial Intelligence",
+    "reach_score": "Market Reach Score",
+    "reach_score_sub": "Based on 5-10km population density, income levels, and market access",
+    "kpi_population": "Target Population (5-10 km)",
+    "kpi_market_size": "Est. Monthly Market Size",
+    "kpi_penetration": "Penetration Potential",
+    "opportunities_title": "Hyper-Local Opportunities & Gaps",
+    "swot_title": "2x2 SWOT Matrix (Jharkhand Context)",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "opportunities": "Opportunities",
+    "threats": "Threats",
+    "threats_title": "Identified Risk & Threat Factors",
+    "competitors_title": "Competitor Landscape Mapping",
+    "pricing_title": "Recommended Product Market Values",
+    "product_name": "Product / Service",
+    "benchmark_price": "Benchmark Value",
+    "risk_sim_title": "Risk Simulation Scenarios",
+    "risk_sim_sub": "Scenario modeling for revenue fluctuations and cash flow stress tests",
+    "scenario_best": "Best Case Scenario",
+    "scenario_expected": "Expected Case Scenario",
+    "scenario_worst": "Worst Case Scenario",
+    "monthly_income": "Monthly Income",
+    "monthly_expenses": "Monthly Expenses",
+    "net_profit": "Net Monthly Profit",
+    "survival_months": "Cash Survival Buffer",
+    "months": "months"
+  },
+  "financial": {
+    "project_cost": "Total Project Cost",
+    "loan_amount": "Sanctioned Loan Amount",
+    "margin_money": "Promoter Margin (10%)",
+    "scheme_title": "Selected Government Scheme",
+    "interest_rate": "Annual Interest Rate",
+    "tenure": "Repayment Tenure",
+    "moratorium": "Moratorium Period",
+    "total_interest": "Total Interest Payable",
+    "total_repayment": "Total Repayment Amount",
+    "amortization_title": "Loan Amortization Schedule (Opening vs Closing Balance)",
+    "breakdown_title": "EMI Breakdown: Interest vs Principal by Quarter",
+    "scheme_comparison_title": "Scheme Eligibility & Capital Limits",
+    "moratorium_impact_title": "Impact of Moratorium on Cash Flow & Repayment",
+    "schedule_title": "Complete Quarterly Repayment Schedule (EMI)",
+    "quarter": "Quarter",
+    "opening_balance": "Opening Balance",
+    "emi_payment": "EMI Amount",
+    "interest": "Interest Component",
+    "principal": "Principal Component",
+    "closing_balance": "Closing Balance",
+    "showing_quarters": "Showing all quarters with repayment breakdown",
+    "with_moratorium": "With Moratorium",
+    "without_moratorium": "Without Moratorium"
+  },
+  "actions": {
+    "download_pdf": "Download Report (PDF)",
+    "download_json": "Export JSON",
+    "start_over": "Start New Analysis",
+    "copied": "Copied to clipboard!",
+    "print_hint": "Opens print dialog formatted for official PDF export"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "demo_mode": "Offline Demo Mode Active (Backend offline or starting up)",
+    "demo_mode_desc": "Demonstrating report with certified sample data. Connect FastAPI backend for live computation.",
+    "years": "Years",
+    "months": "Months"
+  }
+}
