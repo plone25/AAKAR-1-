@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { LanguageProvider } from '../context/LanguageContext';
+import { ThemeProvider } from '../context/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'AAKAR - AI-powered Advisory & Knowledge for Aspirational Rural-enterprises | SIH 2026',
@@ -23,11 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen flex flex-col bg-[#F8FAFC]">
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+    <html lang="en" className="dark">
+      <body className="min-h-screen flex flex-col bg-[#121316] text-slate-100 transition-colors duration-200">
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

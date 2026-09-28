@@ -2,18 +2,60 @@
 @import "tailwindcss";
 
 :root {
+  /* Default Dark Mode Theme */
+  --background: #111217;
+  --card-bg: #1A1D26;
+  --card-hover: #222634;
+  --card-border: #2A2F40;
+  --input-bg: #151720;
+  --input-border: #32384C;
+  --text-main: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  
+  --navy: #38BDF8;
+  --navy-dark: #0284C7;
+  --navy-light: #7DD3FC;
+  --navy-badge: rgba(56, 189, 248, 0.15);
+  
+  --saffron: #F59E0B;
+  --saffron-hover: #D97706;
+  --saffron-badge: rgba(245, 158, 11, 0.15);
+  
+  --green: #10B981;
+  --green-hover: #059669;
+  --green-light: rgba(16, 185, 129, 0.15);
+  
+  --header-bg: rgba(22, 25, 34, 0.95);
+  --header-border: #262B3B;
+}
+
+html.light {
+  --background: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --card-hover: #F8FAFC;
+  --card-border: #E2E8F0;
+  --input-bg: #FFFFFF;
+  --input-border: #CBD5E1;
+  --text-main: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  
   --navy: #1F4E79;
   --navy-dark: #163857;
   --navy-light: #2A6496;
+  --navy-badge: rgba(31, 78, 121, 0.08);
+  
   --saffron: #F28C28;
   --saffron-hover: #D97706;
+  --saffron-badge: rgba(242, 140, 40, 0.08);
+  
   --green: #2E8B3E;
+  --green-hover: #22672E;
   --green-light: #EBF7EE;
-  --background: #F8FAFC;
-  --card-bg: #FFFFFF;
-  --border-color: #E2E8F0;
-  --text-main: #0F172A;
-  --text-muted: #64748B;
+  
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-border: #E2E8F0;
 }
 
 body {
@@ -22,6 +64,7 @@ body {
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Tricolor Stripe under Header */
@@ -30,57 +73,229 @@ body {
   width: 100%;
   background: linear-gradient(
     to right,
-    #F28C28 0%,
-    #F28C28 33.3%,
-    #CBD5E1 33.3%,
-    #CBD5E1 66.6%,
-    #2E8B3E 66.6%,
-    #2E8B3E 100%
+    #F59E0B 0%,
+    #F59E0B 33.3%,
+    #E2E8F0 33.3%,
+    #E2E8F0 66.6%,
+    #10B981 66.6%,
+    #10B981 100%
   );
 }
 
-/* Single clean card style: white, clean border, generous padding, subtle elevation */
+/* Unified clean card style */
 .sih-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.85rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .sih-card-interactive {
-  background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
-  transition: all 0.15s ease-in-out;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.85rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
 }
 
 .sih-card-interactive:hover {
-  border-color: #CBD5E1;
-  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+  border-color: var(--navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.35);
 }
 
 /* High contrast primary buttons */
 .btn-saffron {
-  background-color: #F28C28;
+  background-color: var(--saffron);
   color: #FFFFFF;
   font-weight: 600;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .btn-saffron:hover {
-  background-color: #D97706;
+  background-color: var(--saffron-hover);
+  transform: translateY(-1px);
 }
 
 .btn-navy {
-  background-color: #1F4E79;
+  background-color: var(--navy);
   color: #FFFFFF;
   font-weight: 600;
   transition: background-color 0.15s ease;
 }
 
-.btn-navy:hover {
-  background-color: #163857;
+/* ========================================================= */
+/* DARK MODE OVERRIDES FOR EXISTING TAILWIND CLASS HIERARCHY */
+/* ========================================================= */
+html.dark .sih-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-main) !important;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+  color: #F8FAFC !important;
+}
+
+html.dark .text-slate-700 {
+  color: #E2E8F0 !important;
+}
+
+html.dark .text-slate-600 {
+  color: #CBD5E1 !important;
+}
+
+html.dark .text-slate-500 {
+  color: #94A3B8 !important;
+}
+
+html.dark .text-slate-400 {
+  color: #94A3B8 !important;
+}
+
+html.dark .bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+html.dark .bg-slate-50 {
+  background-color: #151822 !important;
+}
+
+html.dark .bg-slate-100 {
+  background-color: #202432 !important;
+}
+
+html.dark .border-slate-100,
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  border-color: var(--card-border) !important;
+}
+
+html.dark .text-\[\#1F4E79\] {
+  color: #38BDF8 !important;
+}
+
+html.dark .border-\[\#1F4E79\] {
+  border-color: #38BDF8 !important;
+}
+
+html.dark .stroke-slate-100 {
+  stroke: #252A3A !important;
+}
+
+html.dark select,
+html.dark input[type="text"],
+html.dark input[type="number"] {
+  background-color: var(--input-bg) !important;
+  color: #F8FAFC !important;
+  border-color: var(--input-border) !important;
+}
+
+html.dark select:focus,
+html.dark input:focus {
+  border-color: #38BDF8 !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25) !important;
+}
+
+html.dark table thead th {
+  background-color: #151822 !important;
+  color: #CBD5E1 !important;
+  border-color: var(--card-border) !important;
+}
+
+html.dark table tbody tr {
+  border-color: #232737 !important;
+}
+
+html.dark table tbody tr:hover {
+  background-color: #202534 !important;
+}
+
+/* SWOT styling enhancements in dark mode */
+html.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+html.dark .text-emerald-900,
+html.dark .text-emerald-800 {
+  color: #6EE7B7 !important;
+}
+html.dark .text-emerald-700,
+html.dark .text-emerald-600 {
+  color: #A7F3D0 !important;
+}
+
+html.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}
+html.dark .text-amber-900,
+html.dark .text-amber-800 {
+  color: #FCD34D !important;
+}
+html.dark .text-amber-700,
+html.dark .text-amber-600 {
+  color: #FDE68A !important;
+}
+
+html.dark .bg-blue-50,
+html.dark .bg-sky-50 {
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.25) !important;
+}
+html.dark .text-blue-900,
+html.dark .text-sky-900 {
+  color: #7DD3FC !important;
+}
+html.dark .text-blue-700,
+html.dark .text-sky-700 {
+  color: #BAE6FD !important;
+}
+
+html.dark .bg-red-50,
+html.dark .bg-rose-50 {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+  border-color: rgba(244, 63, 94, 0.25) !important;
+}
+html.dark .text-red-900,
+html.dark .text-rose-900 {
+  color: #FDA4AF !important;
+}
+html.dark .text-red-700,
+html.dark .text-rose-700 {
+  color: #FECDD3 !important;
+}
+
+/* Recharts Tooltip styling in dark mode */
+html.dark .recharts-default-tooltip {
+  background-color: #1A1D26 !important;
+  border: 1px solid #353B4D !important;
+  color: #F8FAFC !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .recharts-tooltip-label,
+html.dark .recharts-tooltip-item {
+  color: #F8FAFC !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
 /* Print Stylesheet for PDF Export */
@@ -100,7 +315,9 @@ body {
   }
 
   .sih-card {
+    background-color: #FFFFFF !important;
     border: 1px solid #CBD5E1 !important;
+    color: #000000 !important;
     box-shadow: none !important;
     break-inside: avoid;
     page-break-inside: avoid;
