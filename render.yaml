@@ -1,0 +1,35 @@
+﻿# ─────────────────────────────────────────────────────────────────────────────
+# render.yaml  —  Render Blueprint for AAKAR
+# Defines the web service configuration as Infrastructure-as-Code.
+# Commit this file to your repo root; Render auto-detects it.
+# Docs: https://render.com/docs/blueprint-spec
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  - type: web
+    name: aakar-api
+    runtime: python
+    region: singapore          # Closest to India; change to 'ohio' etc. if preferred
+    plan: starter              # 'free' also works but sleeps after 15 min inactivity
+
+    # ── Source ────────────────────────────────────────────────────────────────
+    repo: https://github.com/plone25/AAKAR-1-
+    branch: main
+    autoDeploy: true           # Auto-redeploy on every push to main
+
+    # ── Build & Start ─────────────────────────────────────────────────────────
+    buildCommand: bash render-build.sh
+    startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
+
+    # ── Health Check ──────────────────────────────────────────────────────────
+    healthCheckPath: /health   # FastAPI /health endpoint (added in api_render.py)
+
+    # ── Environment Variables ─────────────────────────────────────────────────
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 10000           # Render will override this automatically
+      # Add any secret API keys below using 'generateValue' or 'sync' strategy
+      # - key: GEMINI_API_KEY
+      #   sync: false          # Set manually in Render dashboard
