@@ -76,6 +76,17 @@ CATEGORIES = [
 # Persistent assistant instance
 assistant = BusinessAdvisoryAssistant()
 
+@app.get("/")
+def root():
+    """Root endpoint."""
+    return {
+        "service": "AAKAR API",
+        "docs": "/docs",
+        "health": "/health",
+        "status": "healthy"
+    }
+
+@app.get("/health")
 @app.get("/api/health")
 def health_check():
     """Health check endpoint."""
