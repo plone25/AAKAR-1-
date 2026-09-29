@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
 # Render Build Script for AAKAR
 # AI-powered Advisory & Knowledge for Aspirational Rural-enterprises
@@ -33,6 +33,16 @@ nltk.download('wordnet',    quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
 print('NLTK datasets downloaded successfully.')
 "
+
+# ── 5. Build Next.js Frontend (Static Export) ──────────────────────────────
+if command -v npm &> /dev/null && [ -d "frontend" ]; then
+    echo "[5/5] Building Next.js static frontend..."
+    cd frontend
+    npm install
+    npm run build
+    cd ..
+    echo "Frontend build completed successfully."
+fi
 
 echo "============================================"
 echo "  Build complete! Ready to start server."

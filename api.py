@@ -10,6 +10,7 @@ from typing import List, Dict, Any, Optional
 import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 # Import existing backend modules without modifying them
@@ -75,16 +76,6 @@ CATEGORIES = [
 
 # Persistent assistant instance
 assistant = BusinessAdvisoryAssistant()
-
-@app.get("/")
-def root():
-    """Root endpoint."""
-    return {
-        "service": "AAKAR API",
-        "docs": "/docs",
-        "health": "/health",
-        "status": "healthy"
-    }
 
 @app.get("/health")
 @app.get("/api/health")
@@ -184,6 +175,20 @@ def generate_report(payload: ReportRequest) -> Dict[str, Any]:
         return report
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to generate report: {str(e)}")
+
+# ── Mount Frontend (Next.js Static Export) ──────────────────────────────────
+frontend_out = os.path.join(os.path.dirname(__file__), "frontend", "out")
+if os.path.exists(frontend_out):
+    app.mount("/", StaticFiles(directory=frontend_out, html=True), name="frontend")
+else:
+    @app.get("/")
+    def root():
+        return {
+            "service": "AAKAR API",
+            "docs": "/docs",
+            "health": "/health",
+            "status": "healthy"
+        }
 
 if __name__ == "__main__":
     import uvicorn

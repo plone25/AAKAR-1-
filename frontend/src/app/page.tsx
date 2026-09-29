@@ -45,8 +45,8 @@ export default function Home() {
     const fetchMetadata = async () => {
       try {
         const [districtsRes, categoriesRes] = await Promise.all([
-          fetch('http://localhost:8000/api/districts').catch(() => null),
-          fetch('http://localhost:8000/api/categories').catch(() => null),
+          fetch('/api/districts').catch(() => null),
+          fetch('/api/categories').catch(() => null),
         ]);
 
         if (districtsRes && districtsRes.ok) {
@@ -84,7 +84,7 @@ export default function Home() {
     setIsDemoMode(false);
 
     try {
-      const response = await fetch('http://localhost:8000/api/report', {
+      const response = await fetch('/api/report', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
