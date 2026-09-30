@@ -40,13 +40,21 @@ export default function Home() {
   const [apiError, setApiError] = useState<string | null>(null);
   const [isDemoMode, setIsDemoMode] = useState<boolean>(false);
 
+  const getApiBase = () => {
+    if (typeof window !== 'undefined' && (window.location.port === '3000' || window.location.port === '3001')) {
+      return 'http://127.0.0.1:8000';
+    }
+    return '';
+  };
+
   // Fetch districts & categories from FastAPI backend on mount
   useEffect(() => {
     const fetchMetadata = async () => {
       try {
+        const apiBase = getApiBase();
         const [districtsRes, categoriesRes] = await Promise.all([
-          fetch('/api/districts').catch(() => null),
-          fetch('/api/categories').catch(() => null),
+          fetch(`${apiBase}/api/districts`).catch(() => null),
+          fetch(`${apiBase}/api/categories`).catch(() => null),
         ]);
 
         if (districtsRes && districtsRes.ok) {
@@ -84,7 +92,8 @@ export default function Home() {
     setIsDemoMode(false);
 
     try {
-      const response = await fetch('/api/report', {
+      const apiBase = getApiBase();
+      const response = await fetch(`${apiBase}/api/report`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
